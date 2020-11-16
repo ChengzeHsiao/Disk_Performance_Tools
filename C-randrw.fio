@@ -1,0 +1,9 @@
+[FIO-randrw]
+rw=randrw
+ioengine=libaio
+direct=1
+bs=1024k
+filename=/dev/sdb
+size=60g
+iodepth=32
+numjobs=8
