@@ -21,4 +21,13 @@
      bs=512k                   单次io的块文件大小为512 k
      filename=/dev/sda   
     
-# fio 测试用例
+# fio 测试方案
+
+ # 单机测试
+   
+     fio -ioengine=libaio -group_reporting -direct=1 -name=testsda -numjobs=1 --time_based --runtime=1800 -iodepth=64 -rw=randread -bs=512k -filename=/dev/sda   
+    
+ # 并行测试
+  
+     可参考提供的脚本
+ 
