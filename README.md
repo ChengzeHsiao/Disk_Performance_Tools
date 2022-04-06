@@ -34,47 +34,48 @@
     #mun hosts fio 有多少个fio主机，添加几个，./==.fio文件
     fio --client=192.168.115.50,8765 /root/randread.fio --client=192.168.115.51,8765 /root/randread.fio --client=192.168.115.52,8765 /root/randread.fio --       client=192.168.115.53,8765 /root/randread.fio --client=192.168.115.54,8765 /root/randread.fio --client=192.168.115.55,8765 /root/randread.fio   
  # 生成 fio.conf 文件
-[global]
-ioengine=libaio
-direct=1
-thread=1
-norandommap=1
-randrepeat=0
-runtime=60
-ramp_time=6
-size=1g
-directory=/path/to/test
+ 
+ [global]
+ ioengine=libaio
+ direct=1
+ thread=1
+ norandommap=1
+ randrepeat=0
+ runtime=60
+ ramp_time=6
+ size=1g
+ directory=/path/to/test
 
-[read4k-rand]
-stonewall
-group_reporting
-bs=4k
-rw=randread
-numjobs=8
-iodepth=32
+ [read4k-rand]
+ stonewall
+ group_reporting
+ bs=4k
+ rw=randread
+ numjobs=8
+ iodepth=32
 
-[read64k-seq]
-stonewall
-group_reporting
-bs=64k
-rw=read
-numjobs=4
-iodepth=8
+ [read64k-seq]
+ stonewall
+ group_reporting
+ bs=64k
+ rw=read
+ numjobs=4
+ iodepth=8
 
-[write4k-rand]
-stonewall
-group_reporting
-bs=4k
-rw=randwrite
-numjobs=2
-iodepth=4
+ [write4k-rand]
+ stonewall
+ group_reporting
+ bs=4k
+ rw=randwrite
+ numjobs=2
+ iodepth=4
 
-[write64k-seq]
-stonewall
-group_reporting
-bs=64k
-rw=write
-numjobs=2
-iodepth=4
+ [write64k-seq]
+ stonewall
+ group_reporting
+ bs=64k
+ rw=write
+ numjobs=2
+ iodepth=4
 # 测试 fio.conf
-fio fio.conf
+ fio fio.conf
