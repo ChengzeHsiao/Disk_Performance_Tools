@@ -16,7 +16,7 @@
     size=5G              # 本次的测试文件大小为 5g，以每次 4k 的 io 进行测试
     numjobs=30           # 本次的测试线程为 30 个
     runtime=1000         # 测试时间 1000 秒，如果不写则一直将 5g 文件分 4k 每次写完为止
-    ioengine=psync       #io 引擎使用 psync 方式
+    ioengine=psync       #io 引擎使用 psync, libaio方式
     rwmixwrite=30        # 在混合读写的模式下，写占 30%
     group_reporting      # 关于显示结果的，汇总每个进程的信息
     lockmem=1G           # 只使用 1g 内存进行测试
