@@ -5,6 +5,8 @@
 # fio 工具安装
 
 可参考：https://access.redhat.com/solutions/3780861
+    
+    yum install fio -y
 
 # fio 相关参数
     filename=/dev/sdb1   # 测试文件名称，通常选择需要测试的盘的 data 目录
